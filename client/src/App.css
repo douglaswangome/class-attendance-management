@@ -1,0 +1,54 @@
+.app {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100vw;
+	max-width: 100vw;
+	height: 100vh;
+}
+
+.signin {
+	position: relative;
+	display: flex;
+	gap: 12px;
+	align-items: center;
+	width: 80%;
+	max-width: 800px;
+}
+
+.signin img {
+	width: 50%;
+	object-fit: cover;
+}
+
+.signin .form {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	align-items: center;
+	gap: 8px;
+}
+
+.signin .form span.title {
+	font-family: var(--title-font);
+	font-size: var(--title);
+	font-weight: 600;
+}
+
+@media screen and (max-width: 768px) {
+	.signin {
+		flex-direction: column;
+	}
+	.signin img {
+		width: 100%;
+	}
+	.signin .form {
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.signin {
+		width: 96%;
+	}
+}

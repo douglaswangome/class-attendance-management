@@ -1,0 +1,187 @@
+@import url("https://fonts.googleapis.com/css2?family=Baskervville&family=Nunito+Sans:opsz@6..12&display=swap");
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root {
+	font-family: "Nunito Sans", Inter, Helvetica, Arial, sans-serif;
+	font-size: 18px;
+	transition: 0.4s ease-in-out;
+
+	--primary: #407bff;
+	--main: #fff;
+	--border: #000;
+	--text: #000;
+
+	--title: 24px;
+	--title-font: "Baskervville", Inter, Helvetica, Arial;
+}
+body {
+	color: var(--text);
+}
+
+/* @media screen and (prefers-color-scheme: dark) {
+	:root {
+		--main: #000;
+		--border: #fff;
+		--text: #fff;
+	}
+
+	body {
+		background-color: #212121;
+	}
+
+	input {
+		color: #fff;
+	}
+} */
+
+input {
+	background-color: transparent;
+	font-family: inherit;
+	font-size: inherit;
+	display: flex;
+	align-items: center;
+	padding-inline: 6px;
+	height: 100%;
+	width: 100%;
+	border: none;
+}
+
+input:autofill {
+	background-color: transparent;
+}
+input:-webkit-autofill {
+	background-color: transparent;
+}
+
+input:focus {
+	outline: none;
+}
+
+button {
+	position: relative;
+	font-family: inherit;
+	font-size: inherit;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: transparent;
+	border: none;
+	padding-block: 6px;
+	height: 100%;
+	width: 100%;
+	border: none;
+	cursor: pointer;
+	overflow: hidden;
+}
+
+button.outline {
+	color: var(--primary);
+}
+
+button.outline:hover,
+button.outline:focus {
+	outline: none;
+}
+
+button.outline::before,
+button.outline::after {
+	height: 100%;
+	width: 1%;
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	border: 1px solid var(--primary);
+	transition: 0.2s ease-in-out;
+}
+
+button.outline::before {
+	left: 0;
+	border-right: none;
+}
+
+button.outline::after {
+	right: 0;
+	border-left: none;
+}
+
+button:hover::before {
+	width: 99%;
+}
+
+button.solid {
+	background-color: var(--primary);
+	color: #fff;
+}
+
+/* Field */
+.field {
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+	width: 100%;
+}
+
+.field label {
+	text-transform: capitalize;
+	color: var(--text);
+}
+
+.field .input {
+	position: relative;
+	padding: 4px;
+}
+
+.field .input::before,
+.field .input::after {
+	content: "";
+	display: block;
+	position: absolute;
+	right: 0;
+	left: 0;
+	height: calc(50% - 2px);
+	border: 1px solid var(--border);
+	transition: 0.1s ease-in-out;
+}
+
+.field .input::before {
+	top: 0;
+	border-bottom: none;
+}
+
+.field .input::after {
+	bottom: 0;
+	border-top: none;
+}
+
+.field .input:focus-within::before,
+.field .input:focus-within::after {
+	right: 2px;
+	left: 2px;
+}
+
+.field .input:focus-within::before {
+	top: 2px;
+}
+
+.field .input:focus-within::after {
+	bottom: 2px;
+}
+
+.field .input .eye {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	top: 50%;
+	right: 4px;
+	transform: translateY(-50%);
+	color: var(--text);
+}
