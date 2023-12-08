@@ -19,13 +19,23 @@ const SignIn: React.FC = () => {
 		});
 	};
 
+	// const handleSubmit = ():void => {}
+
 	return (
 		<div className="signin">
 			<img src="/images/class.png" alt="class" />
 			<div className="form">
 				<span className="title">Sign In</span>
-				<Field name="username" value={credentials.username} />
-				<Field name="password" value={credentials.password} />
+				<Field
+					name="username"
+					value={credentials.username}
+					fn={handleCredentials}
+				/>
+				<Field
+					name="password"
+					value={credentials.password}
+					fn={handleCredentials}
+				/>
 				<button className="outline">
 					<span>Sign In</span>
 				</button>

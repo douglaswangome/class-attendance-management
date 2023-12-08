@@ -20,9 +20,19 @@
 
 	--title: 24px;
 	--title-font: "Baskervville", Inter, Helvetica, Arial;
+
+	-webkit-tap-highlight-color: transparent;
 }
+
 body {
 	color: var(--text);
+}
+
+body.dark {
+	--main: #000;
+	--border: #fff;
+	--text: #fff;
+	background-color: #212121;
 }
 
 /* @media screen and (prefers-color-scheme: dark) {
@@ -51,13 +61,11 @@ input {
 	height: 100%;
 	width: 100%;
 	border: none;
+	color: var(--text);
 }
 
-input:autofill {
-	background-color: transparent;
-}
-input:-webkit-autofill {
-	background-color: transparent;
+input::placeholder {
+	color: var(--text);
 }
 
 input:focus {
@@ -146,7 +154,7 @@ button.solid {
 	position: absolute;
 	right: 0;
 	left: 0;
-	height: calc(50% - 2px);
+	height: calc(50% - 4px);
 	border: 1px solid var(--border);
 	transition: 0.1s ease-in-out;
 }
